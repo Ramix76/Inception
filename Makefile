@@ -28,8 +28,8 @@ clean:
 	@docker volume rm $$(docker volume ls -q) 
 
 fclean: clean
-	@rm -rf /home/framos-p/data/wordpress
-	@rm -rf /home/framos-p/data/mariadb
+	@sudo rm -rf /home/framos-p/data/wordpress
+	@sudo rm -rf /home/framos-p/data/mariadb
 	@echo "$(DARK_GREEN)Directories Clean$(DEF_COLOR)"
 
 prune:
