@@ -11,14 +11,16 @@ DARK_GREEN =	\033[1m\033[38;2;75;179;82m
 
 all: build up
 
-build: dirs
+build: dirs srcs/requirements/nginx/certs/entrypoint.sh
+	chmod +x srcs/requirements/nginx/certs/entrypoint.sh
+	./srcs/requirements/nginx/certs/entrypoint.sh
 	docker compose -f srcs/docker-compose.yml build
 
 up: dirs
 	docker compose -f srcs/docker-compose.yml up -d
 
 stop:
-	docker compose -f srcs/docker-compse.yml stop
+	docker compose -f srcs/docker-compose.yml stop
 
 clean:
 	@docker compose -f srcs/docker-compose.yml down 
@@ -41,3 +43,4 @@ dirs:
 	@mkdir -p /home/framos-p/data/wordpress
 	@mkdir -p /home/framos-p/data/mariadb
 
+.SILENT:
