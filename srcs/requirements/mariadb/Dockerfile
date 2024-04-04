@@ -1,8 +1,5 @@
 FROM debian:bullseye
 
-#&& apt-get install -y curl ca-certificates  \
-#&& curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | bash \
-
 RUN apt update -y && apt upgrade -y \
 && apt install -y mariadb-server
 
@@ -20,5 +17,3 @@ RUN /usr/local/bin/mariadb.sh
 EXPOSE 3306
 
 CMD ["mariadbd"]
-
-#ENTRYPOINT ["/usr/local/bin/mariadb.sh"] 

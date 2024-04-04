@@ -23,6 +23,4 @@ COPY ./conf/www.conf /etc/php/7.4/fpm/pool.d/
 
 EXPOSE 9000
 
-#CMD ["tail" ,"-f", "/dev/null"]
-
 ENTRYPOINT ["/usr/local/bin/wp_build.sh"]
